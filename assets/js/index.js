@@ -80,7 +80,8 @@ let buscarPropiedades = function(){
   const hasta = document.querySelector('#hasta').value;
   let seccion = document.querySelector('.propiedades');
   let html = '';
-  let cantidadPropiedades = '';
+
+  let cantidadPropiedades = 0;
 
   if(cantidad === '' || desde === '' || hasta === ''){
     alert('Ingrese todos los valores de busqueda');
@@ -92,8 +93,7 @@ let buscarPropiedades = function(){
     }
     else{
       for(let propiedad of propiedadesJSON){
-        if(Number(propiedad.rooms) === Number(cantidad) &&  propiedad.rooms >= desde && propiedad.rooms <= hasta){
-          console.log('html: ', cantidad)
+        if(Number(propiedad.rooms) === Number(cantidad) &&  propiedad.m >= desde && propiedad.m <= hasta){
           html += `<div class="propiedad">
                       <div clas="img style="background-image: url(${propiedad.src})"></div>
                       <section>
@@ -106,9 +106,11 @@ let buscarPropiedades = function(){
                          <button class="btn btn-info ">Ver más</button>
                                                   </section>
                                               </div>`
+          cantidadPropiedades += 1;
         }
       }
       seccion.innerHTML = html;
+      span = cantidadPropiedades;
     }
   }
 }
