@@ -3,7 +3,7 @@ const propiedadesJSON = [
       id:1,
       name: "Casa de campo",
       description: "Un lugar ideal para descansar de la ciudad",
-      // descripcionExtendida: "Bello descanso para ti y tu ...un lugar ideal para descansar de la ciudad",
+      descripcionExtendida: "Bello descanso para ti y tu ...un lugar ideal para descansar de la ciudad",
       src:
         "https://www.construyehogar.com/wp-content/uploads/2020/02/Dise%C3%B1o-casa-en-ladera.jpg",
       rooms: 2,
@@ -13,7 +13,7 @@ const propiedadesJSON = [
       id:2,
       name: "Casa de playa",
       description: "Despierta tus días oyendo el oceano",
-      // descripcionExtendida: "Bello descanso para ti y tu familia. Despierta tus días oyendo el oceano",
+      descripcionExtendida: "Bello descanso para ti y tu familia. Despierta tus días oyendo el oceano",
       src:
         "https://media.chvnoticias.cl/2018/12/casas-en-la-playa-en-yucatan-2712.jpg",
       rooms: 2,
@@ -23,7 +23,7 @@ const propiedadesJSON = [
       id:3,
       name: "Casa en el centro",
       description: "Ten cerca de ti todo lo que necesitas",
-      // descripcionExtendida: "Bello descanso para ti y tu familia, Ten cerca de ti todo lo que necesitas",
+      descripcionExtendida: "Bello descanso para ti y tu familia, Ten cerca de ti todo lo que necesitas",
       src:
         "https://fotos.perfil.com/2018/09/21/trim/950/534/nueva-york-09212018-366965.jpg",
       rooms: 1,
@@ -33,7 +33,7 @@ const propiedadesJSON = [
       id:4,
       name: "Casa rodante",
       description: "Conviertete en un nómada del mundo sin salir de tu casa",
-      // descripcionExtendida: "Bello descanso para ti y tu familia. Conviertete en un nómada del mundo sin salir de tu casa",
+      descripcionExtendida: "Bello descanso para ti y tu familia. Conviertete en un nómada del mundo sin salir de tu casa",
       src:
         "https://cdn.bioguia.com/embed/3d0fb0142790e6b90664042cbafcb1581427139/furgoneta.jpg",
       rooms: 1,
@@ -200,24 +200,24 @@ boton.addEventListener('click', ()=> buscarPropiedades());
 
 
       //  ------------------------------------ Funcion Mostrar Propiedad
-// const mostrarPropiedad = (idElemento) => {
-//     const padreDetalle = document.querySelector('.detalle_propiedad');
-//     const gridContainer = document.querySelector('.gridContainer');
-//     let detalle = propiedadesJSON[idElemento - 1];
-//     gridContainer.style.display = 'none';
-//     padreDetalle.style.display = 'block';
-//     padreDetalle.innerHTML += `<a href="./index.html" style="color:white;" >Inicio</a>
-//                               <div class="container">
-//                                   <section>
-//                                       <div>
-//                                           <section class="detalle_section">
-//                                               <div class="detalle_propiedad">
-//                                                   <img class="detalle" src="${detalle.src}" alt="">
-//                                                   <h4>${detalle.name}</h4>
-//                                                   <p>${detalle.descripcionExtendida}</p>
-//                                               </div> 
-//                                           </section>
-//                                       </div>
-//                                   </section>
-//                               </div>`
-//                           };
+const mostrarPropiedad = (idElemento) => {
+    const padreDetalle = document.querySelector('.detalle_propiedad');
+    const gridContainer = document.querySelector('.gridContainer');
+    let detalle = propiedadesJSON[idElemento - 1];
+    gridContainer.style.display = 'none';
+    padreDetalle.style.display = 'block';
+    padreDetalle.innerHTML += `<a href="./index.html" style="color:white;" >Inicio</a>
+                              <div class="container">
+                                  <section>
+                                      <div>
+                                          <section class="detalle_section">
+                                              <div class="detalle_propiedad">
+                                                  <img class="detalle" src="${detalle.src}" alt="">
+                                                  <h4>${detalle.name}</h4>
+                                                  <p>${detalle.descripcionExtendida}</p>
+                                              </div> 
+                                          </section>
+                                      </div>
+                                  </section>
+                              </div>`
+                          };
