@@ -13,10 +13,8 @@ body{
                          'propiedades'
                          'footer';
     grid-template-rows: 1fr 9fr;
-    /* background: #4e4d4d; */
     color: white;
     height: 1500px;
-    overflow-y: scroll;
 }
 
 .footer{
