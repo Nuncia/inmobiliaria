@@ -113,18 +113,28 @@ let cantidadPropiedades = 0;
 let html = '';
 let span = document.querySelector('#totalId');
 const seccion = document.querySelector('.propiedades');
+let cantidadCuartos = document.querySelector('#cantidadCuartos');
+let desdeMetros = document.querySelector('#desde');
+let hastaMetros = document.querySelector('#hasta');
 
 const verificaArreglo = (cantidadProps) => {
                         if(cantidadProps === 0){
                           alert('No se encotraron propiedades para esos rangos')
                         }
-                      }
-                      
-                      const limpiarGaleria = ()=>{
-                        seccion.innerHTML = '';
-                    }
+                      };
+ 
+const limpiarBuscador = () => {
+                          cantidadCuartos.value = '';
+                          desdeMetros.value = '';
+                          hastaMetros.value = '';
+                      };                      
+
+const limpiarGaleria = ()=>{
+                      seccion.innerHTML = '';
+                    };
 
 const buscarPropiedades = function(cantidadCuartos,desdeMetros, hastaMetros) {
+                      limpiarGaleria();
                       html = '';
                       cantidadPropiedades = 0;
                       for(let propiedad of propiedadesJSON){
@@ -146,29 +156,25 @@ const buscarPropiedades = function(cantidadCuartos,desdeMetros, hastaMetros) {
                           seccion.innerHTML = html;
                           totalId.textContent = cantidadPropiedades;                         
                         }
-                        limpiarGaleria();
+  
                         verificaArreglo(cantidadPropiedades);
                       };
 
 const validarValores = () => {
-                          let cantidadCuartos = document.querySelector('#cantidadCuartos');
-                          let desdeMetros = document.querySelector('#desde');
-                          let hastaMetros = document.querySelector('#hasta');
+                          const cantidad = cantidadCuartos.value;
+                          const desde = desdeMetros.value;
+                          const hasta = hastaMetros.value;
 
-                          if(cantidadCuartos === '' || desdeMetros === '' || hastaMetros === ''){
+                          if(cantidad === '' || desde === '' || hasta === ''){
                             alert('Faltan campos por ingresar');
                           }
                           else{
-                            if(cantidadCuartos <= 0 || desdeMetros <= 0 || hastaMetros <= 0){
-                              alert('Los valores ingresados deben ser mayores a cero');
+                            if(cantidad <= 0 || desde <= 0 || hasta <= 0 || hasta < desde){
+                              alert('Los valores ingresados deben ser mayores que cero y "hasta" debe ser igual o mayor que "desde"');
                             }
                             else{
-                              if(cantidadCuartos < 1 || desdeMetros < 1 || hastaMetros < 1 || hastaMetros < desdeMetros){
-                                alert('Los valores ingresados deben ser mayores que cero y "hasta" debe ser igual o mayor que "desde"')
-                              }
-                              else{
-                                buscarPropiedades(cantidadCuartos, desdeMetros, hastaMetros);  
-                              }
+                              buscarPropiedades(cantidad, desde, hasta);  
+                              limpiarBuscador();
                             }
                           }  
                         };
