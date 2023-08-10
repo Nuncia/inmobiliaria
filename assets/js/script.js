@@ -83,7 +83,7 @@ const propiedadesJSON = [
     {
       id:10,
       name: "Casa de montaña",
-      description: "Despierta con el sol saliendo de la montaña",
+      description: "Despierta con el sol saliendo desde la montaña",
       src:
         "https://cf.bstatic.com/xdata/images/hotel/max1280x900/422127016.jpg?k=2e2bda0e29be2a0606da354b88ee88c1123cd1b1532532f86b85218455b722ff&o=&hp=1",
       rooms: 7,
@@ -92,7 +92,7 @@ const propiedadesJSON = [
     {
       id:11,
       name: "Casa en la precordillera",
-      description: "Arboles cerros y toda la flora y fauna de la zona precordillerana",
+      description: "Arboles, cerros y toda la flora y fauna de la zona precordillerana",
       src:
         "https://www.preciocasasmadera.es/537-home_default/montana.jpg",
       rooms: 4,
@@ -108,6 +108,7 @@ const propiedadesJSON = [
       m: 300
     },
   ];
+
 let cantCuartos = document
 let cantidadPropiedades = 0;
 let html = '';
@@ -156,7 +157,6 @@ const buscarPropiedades = function(cantidadCuartos,desdeMetros, hastaMetros) {
                           seccion.innerHTML = html;
                           totalId.textContent = cantidadPropiedades;                         
                         }
-  
                         verificaArreglo(cantidadPropiedades);
                       };
 
